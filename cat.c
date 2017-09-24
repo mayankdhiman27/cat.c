@@ -11,6 +11,7 @@ putc(c,fp2);
 //driver code
 int main(int argc,char *argv[]){
 FILE *fp;
+//if input is empty
 if(argc==1){
 cat(stdin,stdout);
 }
