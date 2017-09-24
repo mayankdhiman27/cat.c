@@ -11,14 +11,14 @@ putc(c,fp2);
 //driver code
 int main(int argc,char *argv[]){
 FILE *fp;
-//if input is empty
-if(argc==1){
+char *p=argv[0];
+if(argc==1){			//no agruments
 cat(stdin,stdout);
 }
 else{
 while(--argc>0){
 if((fp=fopen(*++argv,"r"))==NULL){
-printf("Can't open file");
+fprintf(stderr,"%s: Can't open file %s\n",p,*argv);		// first %s points to program file and later one points to argv[1],i.e input file
 }
 else{
 cat(fp,stdout);
